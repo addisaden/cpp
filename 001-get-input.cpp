@@ -3,7 +3,7 @@
  *
  * Example 2: Get some input
  *
- * [   ] done
+ * [ x ] done
  *
  */
 
@@ -15,8 +15,10 @@ int main() {
   do {
     cout << "Enter a number (-1 to quit): ";
     if(!(cin >> input_var)) {
-      cout << "You enteres a non-numeric. Exiting..." << endl;
-      break;
+      cout << "Please enter numbers only." << endl;
+      cin.clear();
+      cin.ignore(10000, '\n');
+      continue;
     }
     if (input_var != -1) {
       cout << "You entered " << input_var << endl;
