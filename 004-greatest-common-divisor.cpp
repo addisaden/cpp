@@ -42,7 +42,7 @@ int main() {
   }
 
   cout << "The greatest common divisor of " << a << " and " << b << " is " << my_solution(a, b) << "!" << endl;
-  cout << "And the result of googles solution is " << google_solution(a, b) << "!";
+  cout << "And the result of googles solution is " << google_solution(a, b) << "!" << endl;
 
   return 0;
 }
