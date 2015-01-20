@@ -3,7 +3,7 @@
  *
  * Exercises and Projects
  *
- * [   ] Exercise 1 / 7
+ * [ x ] Exercise 1 / 7
  * 
  * The common field cricket chirps in direct proportion
  * to the current temperature. Adding 40 to the number
