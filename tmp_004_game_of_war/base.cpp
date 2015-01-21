@@ -3,9 +3,12 @@
 #include <cstdlib>
 #include <ctime>
 
-#define kSoldierBuild 40
-#define kJeepBuild 10
-#define kTankBuild 1
+#define kSoldierBuild 3
+#define kSoldierBuildOptional 17
+#define kJeepBuild 3
+#define kJeepBuildOptional 4
+#define kTankBuild 0
+#define kTankBuildOptional 1
 
 #define kSoldierRadius 1
 #define kJeepRadius 3
@@ -73,19 +76,19 @@ bool GameOfWar::Base::dead() {
 }
 
 void GameOfWar::Base::buildSoldiers() {
-  int builds = rand() % (kSoldierBuild + 1);
+  int builds = rand() % (kSoldierBuildOptional + 1) + kSoldierBuild;
   soldiers += builds;
   cout << builds << (builds == 1 ? " Soldat" : " Soldaten") << " ausgebildet." << endl;
 }
 
 void GameOfWar::Base::buildJeeps() {
-  int builds = rand() % (kJeepBuild + 1);
+  int builds = rand() % (kJeepBuildOptional + 1) + kJeepBuild;
   jeeps += builds;
   cout << builds << (builds == 1 ? " Jeep" : " Jeeps") << " hergestellt." << endl;
 }
 
 void GameOfWar::Base::buildTanks() {
-  int builds = rand() % (kTankBuild + 1);
+  int builds = rand() % (kTankBuildOptional + 1) + kTankBuild;
   tanks += builds;
   cout << builds << (builds == 1 ? " Panzer" : " Panzer") << " hergestellt." << endl;
 }
