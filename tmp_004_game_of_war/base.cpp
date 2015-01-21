@@ -26,17 +26,17 @@
 #define kSoldierHitTankChanceN 1
 #define kSoldierHitTankChanceZ 50
 
-#define kJeepHitSoldier 8
+#define kJeepHitSoldier 40
 #define kJeepHitSoldierChanceN 2
 #define kJeepHitSoldierChanceZ 30
 
-#define kJeepHitJeep 2
+#define kJeepHitJeep 5
 #define kJeepHitJeepChanceN 3
 #define kJeepHitJeepChanceZ 50
 
-#define kJeepHitTank 0
-#define kJeepHitTankChanceN 0
-#define kJeepHitTankChanceZ 10
+#define kJeepHitTank 1
+#define kJeepHitTankChanceN 1
+#define kJeepHitTankChanceZ 30
 
 #define kTankHitSoldier 5
 #define kTankHitSoldierChanceN 9
