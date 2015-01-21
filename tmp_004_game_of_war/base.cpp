@@ -3,8 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 
-#define kSoldierBuild 20
-#define kJeepBuild 7
+#define kSoldierBuild 40
+#define kJeepBuild 10
 #define kTankBuild 1
 
 #define kSoldierRadius 1
