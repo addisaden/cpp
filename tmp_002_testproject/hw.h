@@ -1,4 +1,12 @@
 #include <iostream>
 using namespace std;
 
-void hallo(string);
+class Auto {
+  public:
+    Auto();
+    float beschleunige(float additional_speed);
+    float bremse();
+    string to_string();
+  private:
+    float speed;
+};

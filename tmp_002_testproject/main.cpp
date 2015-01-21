@@ -3,9 +3,14 @@
 using namespace std;
 
 int main() {
-  string str = "Welt";
-
-  hallo(str);
+  Auto a;
+  cout << a.to_string() << endl;
+  a.beschleunige(50);
+  cout << a.to_string() << endl;
+  a.bremse();
+  cout << a.to_string() << endl;
+  a.bremse();
+  cout << a.to_string() << endl;
 
   return 0;
 }
