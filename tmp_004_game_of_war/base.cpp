@@ -52,6 +52,25 @@ GameOfWar::Base::Base() {
   soldiers = 10;
   jeeps = 2;
   tanks = 1;
+  last_status[0] = soldiers;
+  last_status[1] = jeeps;
+  last_status[2] = tanks;
+}
+
+void GameOfWar::Base::reset_last_status() {
+  int status[3] = {soldiers, jeeps, tanks};
+  int ls[3];
+
+  for(int i = 0; i < 3; i++)
+    ls[i] = last_status[i] < status[i] ? 0 : (last_status[i] - status[i]);
+
+  cout << "Verluste: "
+    << ls[0] << " Soldaten, "
+    << ls[1] << " Jeeps und "
+    << ls[2] << " Panzer." << endl;
+  last_status[0] = soldiers;
+  last_status[1] = jeeps;
+  last_status[2] = tanks;
 }
 
 void GameOfWar::Base::setEnemy(Base* enemy_base) {
@@ -73,18 +92,21 @@ bool GameOfWar::Base::dead() {
 }
 
 void GameOfWar::Base::buildSoldiers() {
+  reset_last_status();
   int builds = rand() % (kSoldierBuild + 1);
   soldiers += builds;
   cout << builds << (builds == 1 ? " Soldat" : " Soldaten") << " ausgebildet." << endl;
 }
 
 void GameOfWar::Base::buildJeeps() {
+  reset_last_status();
   int builds = rand() % (kJeepBuild + 1);
   jeeps += builds;
   cout << builds << (builds == 1 ? " Jeep" : " Jeeps") << " hergestellt." << endl;
 }
 
 void GameOfWar::Base::buildTanks() {
+  reset_last_status();
   int builds = rand() % (kTankBuild + 1);
   tanks += builds;
   cout << builds << (builds == 1 ? " Panzer" : " Panzer") << " hergestellt." << endl;
@@ -99,6 +121,7 @@ void GameOfWar::Base::deadJeep() { jeeps -= jeeps > 0 ? 1 : 0; }
 void GameOfWar::Base::deadTank() { tanks -= tanks > 0 ? 1 : 0; }
 
 void GameOfWar::Base::attack() {
+  reset_last_status();
   int killed_soldiers = 0;
   int killed_jeeps = 0;
   int killed_tanks = 0;
@@ -172,5 +195,5 @@ void GameOfWar::Base::attack() {
     }
   }
 
-  cout << "Besiegt: " << killed_soldiers << " Soldaten, " << killed_jeeps << " Jeeps und " << killed_tanks << " Panzer." << endl;
+  cout << "Besiegt:  " << killed_soldiers << " Soldaten, " << killed_jeeps << " Jeeps und " << killed_tanks << " Panzer." << endl;
 }

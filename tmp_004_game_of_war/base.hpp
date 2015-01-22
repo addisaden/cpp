@@ -6,6 +6,7 @@ namespace GameOfWar {
     int soldiers;
     int jeeps;
     int tanks;
+    int last_status[3];
     Base *enemy;
 
     public:
@@ -27,5 +28,8 @@ namespace GameOfWar {
     void buildSoldiers();
     void buildJeeps();
     void buildTanks();
+
+    private:
+    void reset_last_status();
   };
 };
